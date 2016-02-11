@@ -16,8 +16,25 @@
     ));
 
     $app->get("/", function() use ($app) {
-      return $app['twig']->render('home.html.twig', array('cd_list' => CD::getAll()));
+        return $app['twig']->render('home.html.twig', array('cd_list' => CD::getAll()));
     });
+
+    $app->get("/add", function() use ($app) {
+        return $app['twig']->render('add.html.twig');
+    });
+
+
+    $app->post("/confirmation", function() use ($app) {
+        $cd = new CD($_POST['artist'], $_POST['album']);
+        $cd->save();
+        return $app['twig']->render('confirmation.html.twig', array('newcd'=>$cd));
+    });
+
+    $app->post("/clear_list", function() use ($app) {
+      return $app['twig']->render('home.html.twig', array('cd_list'=> CD::deleteAll()));
+    });
+
+
 
 
 
