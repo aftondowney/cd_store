@@ -1,12 +1,12 @@
 <?php
 
     require_once __DIR__."/../vendor/autoload.php";
-    require_once __DIR__."/../src/Car.php";
+    require_once __DIR__."/../src/CD.php";
 
     session_start();
 
-    if(empty($_SESSION['car_list'])) {
-        $_SESSION['car_list'] = array();
+    if(empty($_SESSION['cd_list'])) {
+        $_SESSION['cd_list'] = array();
     }
 
     $app = new Silex\Application();
