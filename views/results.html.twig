@@ -15,13 +15,7 @@
       <div class="row">
         <div class="col-sm-6">
           <h2>Albums that match your search:</h2>
-          {% for cd in newcd %}
-              <p> Artist: {{ cd.getArtist }}</p>
-              <p> Album: {{ cd.getAlbum }}</p>
-          {% endfor %}
-          {% if newcd is empty %}
-              <h3>Welcome to the future home of your CD Library</h3>
-          {% endif %}
+
         </div>
       </div>
     </div>

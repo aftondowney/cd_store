@@ -46,6 +46,11 @@ class CD
         $_SESSION['cd_list'] = array();
     }
 
+    function cdMatch($input_artist)
+    {
+      return $this->artist == $input_artist;
+    }
+
 
 
 }

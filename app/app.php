@@ -38,6 +38,9 @@
         return $app['twig']->render('search.html.twig');
     });
 
+    $app->get('/search_results', function() use ($app) {
+        return $app['twig']->render('results.html.twig');
+    });
 
 
 
