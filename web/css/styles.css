@@ -3,3 +3,18 @@
 body {
   font-family: 'Open Sans', sans-serif;
 }
+
+
+.jumbotron {
+  text-align: center;
+  background-color: #3F869E;
+  color: white;
+}
+
+h2 {
+  padding-bottom: 12px;
+}
+
+.btn {
+  margin-top: 12px;
+}
