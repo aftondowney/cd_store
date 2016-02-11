@@ -30,6 +30,24 @@ class CD
     {
         return $this->album;
     }
+
+    function save()
+    {
+        array_push($_SESSION['cd_list'], $this);
+    }
+
+    static function getAll()
+    {
+        return $_SESSION['cd_list'];
+    }
+
+    static function deleteAll()
+    {
+        $_SESSION['cd_list'] = array();
+    }
+
+
+
 }
 
 ?>
