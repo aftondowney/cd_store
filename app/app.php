@@ -16,7 +16,7 @@
     ));
 
     $app->get("/", function() use ($app) {
-        return $app['twig']->render('home.html.twig', array('cd_list' => CD::getAll()));
+        return $app['twig']->render('home.html.twig', array('newcd' => CD::getAll()));
     });
 
     $app->get("/add", function() use ($app) {
@@ -31,7 +31,11 @@
     });
 
     $app->post("/clear_list", function() use ($app) {
-      return $app['twig']->render('home.html.twig', array('cd_list'=> CD::deleteAll()));
+      return $app['twig']->render('home.html.twig', array('newcd'=> CD::deleteAll()));
+    });
+
+    $app->get("/search", function() use ($app) {
+        return $app['twig']->render('search.html.twig');
     });
 
 

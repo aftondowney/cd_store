@@ -14,7 +14,7 @@
 
       <div class="row">
         <div class="col-sm-6">
-          <h2>Albums</h2>
+          <h2>Albums that match your search:</h2>
           {% for cd in newcd %}
               <p> Artist: {{ cd.getArtist }}</p>
               <p> Album: {{ cd.getAlbum }}</p>
@@ -23,17 +23,6 @@
               <h3>Welcome to the future home of your CD Library</h3>
           {% endif %}
         </div>
-
-        <div class="col-sm-6">
-          <a href="/add"><button class="btn btn-success">Add CD</button></a>
-
-          <a href="/search"><button class="btn btn-success">Search by Artist</button></a>
-
-          <form action="/clear_list" method="post">
-            <button type="submit" class="btn btn-danger" name="delete">Clear Entire Library</button>
-          </form>
-        </div>
-
       </div>
     </div>
   </body>
