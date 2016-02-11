@@ -14,20 +14,23 @@
 
       <div class="row">
         <div class="col-sm-6">
-          <h2>Albums</h2>
-          {% for cd in cd_list %}
-              <p> Artist: {{cd.getArtist}}</p>
-              <p> Album: {{cd.getAlbum}}</p>
-          {% endfor %}
-          {% if cd_list is empty %}
-              <h3>Welcome to the future home of your CD Library</h3>
-          {% endif %}
+          <h2>Add a CD to your Library</h2>
+          <form action="/add" method="get">
+            <div class="form-group">
+              <label for="artist">Enter Artist Name</label>
+              <input type="text" name="artist" id="artist">
+            </div>
+            <div class="form-group">
+              <label for="album">Enter Album Name</label>
+              <input type="text" name="album" id="album">
+            </div>
+            <button type="submit" class="btn btn-warning">Search</button>
+          </form>
         </div>
 
         <div class="col-sm-6">
-          <a href="/add"><button class="btn btn-success">Add CD</button></a>
 
-          <a href="/search"><button class="btn btn-success">Search by Artist</button></a>
+
         </div>
 
       </div>
