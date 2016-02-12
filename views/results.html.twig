@@ -16,6 +16,14 @@
         <div class="col-sm-6">
           <h2>Albums that match your search:</h2>
 
+          {% for cd in newcd %}
+            {% if cd.matchArtist != false %}
+              <p>{{ cd.getArtist(input_artist, artist_name) }}</p>
+
+            {% endif %}
+
+          {% endfor %}
+
         </div>
       </div>
     </div>

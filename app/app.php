@@ -2,6 +2,7 @@
 
     require_once __DIR__."/../vendor/autoload.php";
     require_once __DIR__."/../src/CD.php";
+    require_once __DIR__."/../src/Artist.php";
 
     session_start();
 
@@ -39,7 +40,8 @@
     });
 
     $app->get('/search_results', function() use ($app) {
-        return $app['twig']->render('results.html.twig');
+        $name = new Artist($_GET['artist']);
+        return $app['twig']->render('results.html.twig', array('input_artist' => $name, 'newcd'=> CD::getAll(), 'artist_name' => $cd->getArtist));
     });
 
 

@@ -19,9 +19,9 @@ class Artist
     return $this->name;
   }
 
-  function matchArtist($input_artist, $name)
+  function matchArtist($name, $input_artist)
   {
-    strrpos($name, $input_artist);
+    return strrpos($name, $input_artist);
   }
 
 }
