@@ -18,7 +18,7 @@
 
           {% for cd in newcd %}
             {% if cd.matchArtist != false %}
-              <p>{{ cd.getArtist(input_artist, artist_name) }}</p>
+              <p>{{ cd.getArtist() }}</p>
 
             {% endif %}
 

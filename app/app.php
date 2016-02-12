@@ -41,7 +41,8 @@
 
     $app->get('/search_results', function() use ($app) {
         $name = new Artist($_GET['artist']);
-        return $app['twig']->render('results.html.twig', array('input_artist' => $name, 'newcd'=> CD::getAll(), 'artist_name' => $cd->getArtist));
+        $artist = cd->getArtist();
+        return $app['twig']->render('results.html.twig', array('input_artist' => $name, 'newcd'=> CD::getAll(), 'artist_name' => $cd->getArtist. 'matched_artist' => cd.matchArtist()));
     });
 
 
